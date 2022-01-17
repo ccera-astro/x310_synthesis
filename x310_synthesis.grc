@@ -1,0 +1,1111 @@
+options:
+  parameters:
+    author: Marcus Leech, http://www.ccera.ca
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: A 4-channel correlator for aperture synthesis in radio astronomy
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: no_gui
+    hier_block_src_path: '.:'
+    id: x310_synthesis
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: run
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: X310 multi correlator
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: int(srate)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 20.0]
+    rotation: 0
+    state: enabled
+- name: a1enu
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Antenna 1 ENU
+    short_id: ''
+    type: str
+    value: '"(0.8,0.0,0.0)"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [760, 1188.0]
+    rotation: 0
+    state: true
+- name: a2enu
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ANtenna 2 ENU
+    short_id: ''
+    type: str
+    value: '"(5.35,0.0,0.0)"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 1188.0]
+    rotation: 0
+    state: true
+- name: a3enu
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Antenna 3 ENU
+    short_id: ''
+    type: str
+    value: '"(18.35,0.0,0.0)"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1072, 1188.0]
+    rotation: 0
+    state: true
+- name: blocks_keep_one_in_n_0
+  id: blocks_keep_one_in_n
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    n: int(samp_rate)
+    type: complex
+    vlen: '6'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1064, 1092.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_conjugate_cc_0
+  id: blocks_multiply_conjugate_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1088, 8.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_conjugate_cc_0_0
+  id: blocks_multiply_conjugate_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1104, 224.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_conjugate_cc_0_0_0
+  id: blocks_multiply_conjugate_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1112, 400.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_conjugate_cc_0_0_0_0
+  id: blocks_multiply_conjugate_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1112, 552.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_conjugate_cc_0_0_0_0_0
+  id: blocks_multiply_conjugate_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1104, 712.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_conjugate_cc_0_0_0_0_0_0
+  id: blocks_multiply_conjugate_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1104, 840.0]
+    rotation: 0
+    state: true
+- name: blocks_streams_to_vector_0
+  id: blocks_streams_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '6'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1520, 304.0]
+    rotation: 0
+    state: true
+- name: blocks_sub_xx_0
+  id: blocks_sub_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '6'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1600, 1064.0]
+    rotation: 0
+    state: true
+- name: device
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Device string
+    short_id: ''
+    type: str
+    value: '"type=x300,addr=192.168.10.5,master_clock_rate=200e6"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [248, 1188.0]
+    rotation: 0
+    state: true
+- name: freq
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Frequency
+    short_id: ''
+    type: eng_float
+    value: 1417.0e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 1188.0]
+    rotation: 0
+    state: true
+- name: fringe_logger
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport pymap3d as pm\nimport time\nimport json\nimport\
+      \ ephem\n\n\nclass blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Embedded Python Block example - a simple\
+      \ multiply const\"\"\"\n\n    def __init__(self, veclen=6, medlen=5, refWGS84=(0,0,0),\
+      \ a1enu=(0,0,0), a2enu=(0,0,0), a3enu=(0,0,0), pairings=(), prefix=\"./\", declination=-99.0):\
+      \  # only default arguments here\n        \"\"\"arguments to this function show\
+      \ up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n         \
+      \   self,\n            name='Filter and Logger for fringes',   # will show up\
+      \ in GRC\n            in_sig=[(np.complex64,veclen)],\n            out_sig=None\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.veclen\
+      \ = veclen\n        self.medlen = medlen\n        self.set_output_multiple(self.medlen)\n\
+      \        self.pairings = pairings\n        self.medianI = np.zeros((self.veclen,\
+      \ self.medlen))\n        self.medianQ = np.zeros((self.veclen, self.medlen))\n\
+      \n        self.prefix = prefix\n        self.refWGS84 = refWGS84\n        enus=[(0,0,0),a1enu,a2enu,a3enu]\n\
+      \        xyzs = []\n        for enu in enus:\n            xyzs.append(pm.ecef.enu2ecef(enu[0],\
+      \ enu[1], enu[2], refWGS84[0], refWGS84[1],\n                refWGS84[2]))\n\
+      \        pdict = {}\n        pdict[\"declination\"] = declination\n        \n\
+      \        #\n        # Create the baselines array from the given pairings input\n\
+      \        #\n        # The baseline tuples are always (WESTxyz,EASTxyz)\n   \
+      \     #\n        baselines = []\n        for p in pairings:\n            one\
+      \ = xyzs[p[0]]\n            two = xyzs[p[1]]\n            baselines.append([one,two])\n\
+      \n        pdict[\"refWGS84\"] = refWGS84\n        pdict[\"refXYZ\"] = pm.ecef.enu2ecef(0.0,\
+      \ 0.0, 0.0, refWGS84[0], refWGS84[1], refWGS84[2])\n        pdict[\"baselinesXYZ\"\
+      ] = baselines\n        ltp = time.gmtime()\n        fn = prefix+\"corr-%04d%02d%02d.json\"\
+      \ % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)\n        fp = open(fn, \"w\")\n \
+      \       fp.write (json.dumps(pdict, indent=4)+\"\\n\")\n        fp.close()\n\
+      \    \n    def cur_sidereal(self,longitude):\n        longstr = \"%02d\" % int(longitude)\n\
+      \        longstr = longstr + \":\"\n        longitude = abs(longitude)\n   \
+      \     frac = longitude - int(longitude)\n        frac *= 60\n        mins =\
+      \ int(frac)\n        longstr += \"%02d\" % mins\n        longstr += \":00\"\n\
+      \        x = ephem.Observer()\n        x.date = ephem.now()\n        x.long\
+      \ = longstr\n        jdate = ephem.julian_date(x)\n        tokens=str(x.sidereal_time()).split(\"\
+      :\")\n        hours=int(tokens[0])\n        minutes=int(tokens[1])\n       \
+      \ seconds=int(float(tokens[2]))\n        sidt = \"%02d,%02d,%02d\" % (hours,\
+      \ minutes, seconds)\n        return (sidt)       \n\n    def work(self, input_items,\
+      \ output_items):\n        medcount = 0\n        #\n        # For each input\
+      \ item--guaranteed to be multiple of self.medlen\n        #\n        for itm\
+      \ in input_items[0]:\n            #\n            # Stuff appropriate slot in\
+      \ self.medianI/Q\n            #\n            for i in range(0,len(itm)):\n \
+      \               self.medianI[i][medcount] = itm[i].real\n                self.medianQ[i][medcount]\
+      \ = itm[i].imag\n            \n            #\n            # Bump the counter\n\
+      \            #\n            medcount += 1\n            \n            #\n   \
+      \         # Time to log!\n            #\n            if (medcount >= self.medlen):\n\
+      \                medcount = 0\n                ltp = time.gmtime()\n       \
+      \         fn = \"corr-%04d%02d%02d.csv\" % (ltp.tm_year, ltp.tm_mon, ltp.tm_mday)\n\
+      \                curs = self.cur_sidereal(self.refWGS84[1])\n              \
+      \  fp = open(self.prefix+fn, \"a\")\n                fp.write(\"%s,\" % curs)\n\
+      \                for i in range(0,len(itm)):\n                    fp.write(\"\
+      %.6f:%.6f\" % (np.median(self.medianI[i]), np.median(self.medianQ[i])))\n  \
+      \                  if (i < len(itm)-1):\n                        fp.write(\"\
+      ,\")\n                fp.write(\"\\n\")\n                fp.close()\n  \n  \
+      \      return len(input_items[0])\n"
+    a1enu: eval(a1enu)
+    a2enu: eval(a2enu)
+    a3enu: eval(a3enu)
+    affinity: ''
+    alias: ''
+    comment: ''
+    declination: '-99.0'
+    maxoutbuf: '0'
+    medlen: '5'
+    minoutbuf: '0'
+    pairings: ((0,1),(0,2),(0,3),(1,2),(1,3),(2,3))
+    prefix: '"./"'
+    refWGS84: eval(refpos)
+    veclen: '6'
+  states:
+    _io_cache: ('Filter and Logger for fringes', 'blk', [('veclen', '6'), ('medlen',
+      '5'), ('refWGS84', '(0, 0, 0)'), ('a1enu', '(0, 0, 0)'), ('a2enu', '(0, 0, 0)'),
+      ('a3enu', '(0, 0, 0)'), ('pairings', '()'), ('prefix', "'./'"), ('declination',
+      '-99.0')], [('0', 'complex', 6)], [], 'Embedded Python Block example - a simple
+      multiply const', ['medlen', 'pairings', 'prefix', 'refWGS84', 'veclen'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1808, 1084.0]
+    rotation: 0
+    state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: 'For N antennas with unique spacings,
+
+      there are N(N-1)/2
+
+      Possible unique baselines'
+    note: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [584, 436.0]
+    rotation: 0
+    state: true
+- name: refpos
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Reference WGS84 position
+    short_id: ''
+    type: str
+    value: '"(44.8955,-76.019005,117.0)"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 1188.0]
+    rotation: 0
+    state: true
+- name: rfgain
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: RF Gain setting
+    short_id: ''
+    type: eng_float
+    value: '20.0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [368, 1084.0]
+    rotation: 0
+    state: true
+- name: single_pole_iir_filter_xx_0
+  id: single_pole_iir_filter_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha: 1.0/(samp_rate)
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '6'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1092.0]
+    rotation: 0
+    state: true
+- name: single_pole_iir_filter_xx_1
+  id: single_pole_iir_filter_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha: 1.0/(2.0*60)
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '6'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1392, 1172.0]
+    rotation: 0
+    state: true
+- name: srate
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Sample Rate
+    short_id: ''
+    type: eng_float
+    value: 5.0e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 1084.0]
+    rotation: 0
+    state: true
+- name: uhd_usrp_source_0
+  id: uhd_usrp_source
+  parameters:
+    affinity: ''
+    alias: ''
+    ant0: RX1
+    ant1: RX2
+    ant10: RX2
+    ant11: RX2
+    ant12: RX2
+    ant13: RX2
+    ant14: RX2
+    ant15: RX2
+    ant16: RX2
+    ant17: RX2
+    ant18: RX2
+    ant19: RX2
+    ant2: RX1
+    ant20: RX2
+    ant21: RX2
+    ant22: RX2
+    ant23: RX2
+    ant24: RX2
+    ant25: RX2
+    ant26: RX2
+    ant27: RX2
+    ant28: RX2
+    ant29: RX2
+    ant3: RX2
+    ant30: RX2
+    ant31: RX2
+    ant4: RX2
+    ant5: RX2
+    ant6: RX2
+    ant7: RX2
+    ant8: RX2
+    ant9: RX2
+    bw0: '0'
+    bw1: '0'
+    bw10: '0'
+    bw11: '0'
+    bw12: '0'
+    bw13: '0'
+    bw14: '0'
+    bw15: '0'
+    bw16: '0'
+    bw17: '0'
+    bw18: '0'
+    bw19: '0'
+    bw2: '0'
+    bw20: '0'
+    bw21: '0'
+    bw22: '0'
+    bw23: '0'
+    bw24: '0'
+    bw25: '0'
+    bw26: '0'
+    bw27: '0'
+    bw28: '0'
+    bw29: '0'
+    bw3: '0'
+    bw30: '0'
+    bw31: '0'
+    bw4: '0'
+    bw5: '0'
+    bw6: '0'
+    bw7: '0'
+    bw8: '0'
+    bw9: '0'
+    center_freq0: freq
+    center_freq1: freq
+    center_freq10: '0'
+    center_freq11: '0'
+    center_freq12: '0'
+    center_freq13: '0'
+    center_freq14: '0'
+    center_freq15: '0'
+    center_freq16: '0'
+    center_freq17: '0'
+    center_freq18: '0'
+    center_freq19: '0'
+    center_freq2: freq
+    center_freq20: '0'
+    center_freq21: '0'
+    center_freq22: '0'
+    center_freq23: '0'
+    center_freq24: '0'
+    center_freq25: '0'
+    center_freq26: '0'
+    center_freq27: '0'
+    center_freq28: '0'
+    center_freq29: '0'
+    center_freq3: freq
+    center_freq30: '0'
+    center_freq31: '0'
+    center_freq4: '0'
+    center_freq5: '0'
+    center_freq6: '0'
+    center_freq7: '0'
+    center_freq8: '0'
+    center_freq9: '0'
+    clock_rate: 0e0
+    clock_source0: ''
+    clock_source1: ''
+    clock_source2: ''
+    clock_source3: ''
+    clock_source4: ''
+    clock_source5: ''
+    clock_source6: ''
+    clock_source7: ''
+    comment: ''
+    dc_offs_enb0: '""'
+    dc_offs_enb1: '""'
+    dc_offs_enb10: '""'
+    dc_offs_enb11: '""'
+    dc_offs_enb12: '""'
+    dc_offs_enb13: '""'
+    dc_offs_enb14: '""'
+    dc_offs_enb15: '""'
+    dc_offs_enb16: '""'
+    dc_offs_enb17: '""'
+    dc_offs_enb18: '""'
+    dc_offs_enb19: '""'
+    dc_offs_enb2: '""'
+    dc_offs_enb20: '""'
+    dc_offs_enb21: '""'
+    dc_offs_enb22: '""'
+    dc_offs_enb23: '""'
+    dc_offs_enb24: '""'
+    dc_offs_enb25: '""'
+    dc_offs_enb26: '""'
+    dc_offs_enb27: '""'
+    dc_offs_enb28: '""'
+    dc_offs_enb29: '""'
+    dc_offs_enb3: '""'
+    dc_offs_enb30: '""'
+    dc_offs_enb31: '""'
+    dc_offs_enb4: '""'
+    dc_offs_enb5: '""'
+    dc_offs_enb6: '""'
+    dc_offs_enb7: '""'
+    dc_offs_enb8: '""'
+    dc_offs_enb9: '""'
+    dev_addr: '""'
+    dev_args: device
+    gain0: rfgain
+    gain1: rfgain
+    gain10: '0'
+    gain11: '0'
+    gain12: '0'
+    gain13: '0'
+    gain14: '0'
+    gain15: '0'
+    gain16: '0'
+    gain17: '0'
+    gain18: '0'
+    gain19: '0'
+    gain2: rfgain
+    gain20: '0'
+    gain21: '0'
+    gain22: '0'
+    gain23: '0'
+    gain24: '0'
+    gain25: '0'
+    gain26: '0'
+    gain27: '0'
+    gain28: '0'
+    gain29: '0'
+    gain3: rfgain
+    gain30: '0'
+    gain31: '0'
+    gain4: '0'
+    gain5: '0'
+    gain6: '0'
+    gain7: '0'
+    gain8: '0'
+    gain9: '0'
+    iq_imbal_enb0: '""'
+    iq_imbal_enb1: '""'
+    iq_imbal_enb10: '""'
+    iq_imbal_enb11: '""'
+    iq_imbal_enb12: '""'
+    iq_imbal_enb13: '""'
+    iq_imbal_enb14: '""'
+    iq_imbal_enb15: '""'
+    iq_imbal_enb16: '""'
+    iq_imbal_enb17: '""'
+    iq_imbal_enb18: '""'
+    iq_imbal_enb19: '""'
+    iq_imbal_enb2: '""'
+    iq_imbal_enb20: '""'
+    iq_imbal_enb21: '""'
+    iq_imbal_enb22: '""'
+    iq_imbal_enb23: '""'
+    iq_imbal_enb24: '""'
+    iq_imbal_enb25: '""'
+    iq_imbal_enb26: '""'
+    iq_imbal_enb27: '""'
+    iq_imbal_enb28: '""'
+    iq_imbal_enb29: '""'
+    iq_imbal_enb3: '""'
+    iq_imbal_enb30: '""'
+    iq_imbal_enb31: '""'
+    iq_imbal_enb4: '""'
+    iq_imbal_enb5: '""'
+    iq_imbal_enb6: '""'
+    iq_imbal_enb7: '""'
+    iq_imbal_enb8: '""'
+    iq_imbal_enb9: '""'
+    lo_export0: 'True'
+    lo_export1: 'False'
+    lo_export10: 'False'
+    lo_export11: 'False'
+    lo_export12: 'False'
+    lo_export13: 'False'
+    lo_export14: 'False'
+    lo_export15: 'False'
+    lo_export16: 'False'
+    lo_export17: 'False'
+    lo_export18: 'False'
+    lo_export19: 'False'
+    lo_export2: 'False'
+    lo_export20: 'False'
+    lo_export21: 'False'
+    lo_export22: 'False'
+    lo_export23: 'False'
+    lo_export24: 'False'
+    lo_export25: 'False'
+    lo_export26: 'False'
+    lo_export27: 'False'
+    lo_export28: 'False'
+    lo_export29: 'False'
+    lo_export3: 'False'
+    lo_export30: 'False'
+    lo_export31: 'False'
+    lo_export4: 'False'
+    lo_export5: 'False'
+    lo_export6: 'False'
+    lo_export7: 'False'
+    lo_export8: 'False'
+    lo_export9: 'False'
+    lo_source0: internal
+    lo_source1: companion
+    lo_source10: internal
+    lo_source11: internal
+    lo_source12: internal
+    lo_source13: internal
+    lo_source14: internal
+    lo_source15: internal
+    lo_source16: internal
+    lo_source17: internal
+    lo_source18: internal
+    lo_source19: internal
+    lo_source2: external
+    lo_source20: internal
+    lo_source21: internal
+    lo_source22: internal
+    lo_source23: internal
+    lo_source24: internal
+    lo_source25: internal
+    lo_source26: internal
+    lo_source27: internal
+    lo_source28: internal
+    lo_source29: internal
+    lo_source3: external
+    lo_source30: internal
+    lo_source31: internal
+    lo_source4: internal
+    lo_source5: internal
+    lo_source6: internal
+    lo_source7: internal
+    lo_source8: internal
+    lo_source9: internal
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchan: '4'
+    norm_gain0: 'False'
+    norm_gain1: 'False'
+    norm_gain10: 'False'
+    norm_gain11: 'False'
+    norm_gain12: 'False'
+    norm_gain13: 'False'
+    norm_gain14: 'False'
+    norm_gain15: 'False'
+    norm_gain16: 'False'
+    norm_gain17: 'False'
+    norm_gain18: 'False'
+    norm_gain19: 'False'
+    norm_gain2: 'False'
+    norm_gain20: 'False'
+    norm_gain21: 'False'
+    norm_gain22: 'False'
+    norm_gain23: 'False'
+    norm_gain24: 'False'
+    norm_gain25: 'False'
+    norm_gain26: 'False'
+    norm_gain27: 'False'
+    norm_gain28: 'False'
+    norm_gain29: 'False'
+    norm_gain3: 'False'
+    norm_gain30: 'False'
+    norm_gain31: 'False'
+    norm_gain4: 'False'
+    norm_gain5: 'False'
+    norm_gain6: 'False'
+    norm_gain7: 'False'
+    norm_gain8: 'False'
+    norm_gain9: 'False'
+    num_mboards: '1'
+    otw: sc16
+    rx_agc0: Default
+    rx_agc1: Default
+    rx_agc10: Default
+    rx_agc11: Default
+    rx_agc12: Default
+    rx_agc13: Default
+    rx_agc14: Default
+    rx_agc15: Default
+    rx_agc16: Default
+    rx_agc17: Default
+    rx_agc18: Default
+    rx_agc19: Default
+    rx_agc2: Default
+    rx_agc20: Default
+    rx_agc21: Default
+    rx_agc22: Default
+    rx_agc23: Default
+    rx_agc24: Default
+    rx_agc25: Default
+    rx_agc26: Default
+    rx_agc27: Default
+    rx_agc28: Default
+    rx_agc29: Default
+    rx_agc3: Default
+    rx_agc30: Default
+    rx_agc31: Default
+    rx_agc4: Default
+    rx_agc5: Default
+    rx_agc6: Default
+    rx_agc7: Default
+    rx_agc8: Default
+    rx_agc9: Default
+    samp_rate: samp_rate
+    sd_spec0: A:0 A:1 B:0 B:1
+    sd_spec1: ''
+    sd_spec2: ''
+    sd_spec3: ''
+    sd_spec4: ''
+    sd_spec5: ''
+    sd_spec6: ''
+    sd_spec7: ''
+    show_lo_controls: 'False'
+    start_time: '-1.0'
+    stream_args: ''
+    stream_chans: '[]'
+    sync: sync
+    time_source0: ''
+    time_source1: ''
+    time_source2: ''
+    time_source3: ''
+    time_source4: ''
+    time_source5: ''
+    time_source6: ''
+    time_source7: ''
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [368, 4.0]
+    rotation: 0
+    state: true
+- name: virtual_sink_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: WEST
+    stream_id: rf0
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [664, 52.0]
+    rotation: 0
+    state: true
+- name: virtual_sink_0_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 156.0]
+    rotation: 0
+    state: true
+- name: virtual_sink_0_0_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 244.0]
+    rotation: 0
+    state: true
+- name: virtual_sink_0_0_0_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: EAST
+    stream_id: rf3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [648, 332.0]
+    rotation: 0
+    state: true
+- name: virtual_sink_1
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: corr_vector
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1760, 372.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf0
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [904, 4.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [888, 84.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [864, 564.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 644.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_0_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 804.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_0_0_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 964.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_0_0_1
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 884.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_0_1
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 724.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_1
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf0
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [888, 212.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_2
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [880, 300.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_3
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf0
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [880, 396.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_3_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: rf3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [880, 476.0]
+    rotation: 0
+    state: true
+- name: virtual_source_1
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: corr_vector
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [504, 1100.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_keep_one_in_n_0, '0', blocks_sub_xx_0, '0']
+- [blocks_keep_one_in_n_0, '0', single_pole_iir_filter_xx_1, '0']
+- [blocks_multiply_conjugate_cc_0, '0', blocks_streams_to_vector_0, '0']
+- [blocks_multiply_conjugate_cc_0_0, '0', blocks_streams_to_vector_0, '1']
+- [blocks_multiply_conjugate_cc_0_0_0, '0', blocks_streams_to_vector_0, '2']
+- [blocks_multiply_conjugate_cc_0_0_0_0, '0', blocks_streams_to_vector_0, '3']
+- [blocks_multiply_conjugate_cc_0_0_0_0_0, '0', blocks_streams_to_vector_0, '4']
+- [blocks_multiply_conjugate_cc_0_0_0_0_0_0, '0', blocks_streams_to_vector_0, '5']
+- [blocks_streams_to_vector_0, '0', virtual_sink_1, '0']
+- [blocks_sub_xx_0, '0', fringe_logger, '0']
+- [single_pole_iir_filter_xx_0, '0', blocks_keep_one_in_n_0, '0']
+- [single_pole_iir_filter_xx_1, '0', blocks_sub_xx_0, '1']
+- [uhd_usrp_source_0, '0', virtual_sink_0, '0']
+- [uhd_usrp_source_0, '1', virtual_sink_0_0, '0']
+- [uhd_usrp_source_0, '2', virtual_sink_0_0_0, '0']
+- [uhd_usrp_source_0, '3', virtual_sink_0_0_0_0, '0']
+- [virtual_source_0, '0', blocks_multiply_conjugate_cc_0, '0']
+- [virtual_source_0_0, '0', blocks_multiply_conjugate_cc_0, '1']
+- [virtual_source_0_0_0, '0', blocks_multiply_conjugate_cc_0_0_0_0, '0']
+- [virtual_source_0_0_0_0, '0', blocks_multiply_conjugate_cc_0_0_0_0, '1']
+- [virtual_source_0_0_0_0_0, '0', blocks_multiply_conjugate_cc_0_0_0_0_0, '1']
+- [virtual_source_0_0_0_0_0_0, '0', blocks_multiply_conjugate_cc_0_0_0_0_0_0, '1']
+- [virtual_source_0_0_0_0_1, '0', blocks_multiply_conjugate_cc_0_0_0_0_0_0, '0']
+- [virtual_source_0_0_0_1, '0', blocks_multiply_conjugate_cc_0_0_0_0_0, '0']
+- [virtual_source_0_1, '0', blocks_multiply_conjugate_cc_0_0, '0']
+- [virtual_source_0_2, '0', blocks_multiply_conjugate_cc_0_0, '1']
+- [virtual_source_0_3, '0', blocks_multiply_conjugate_cc_0_0_0, '0']
+- [virtual_source_0_3_0, '0', blocks_multiply_conjugate_cc_0_0_0, '1']
+- [virtual_source_1, '0', single_pole_iir_filter_xx_0, '0']
+
+metadata:
+  file_format: 1
